@@ -1,0 +1,21 @@
+{
+  "name": "idioms",
+  "version": "1.0.0",
+  "description": "Id",
+  "main": "index.js",
+  "dependencies": {},
+  "scripts": {
+    "testxx": "ls -1 spec/*.js | node $(npm bin)/runsuite",
+    "test": "$(npm bin)/chi-run spec *.test.js .testresults default coverage xunit"
+  },
+  "author": "Chris Grimes",
+  "license": "ISC",
+  "nyc": {
+    "include": [
+      "src/**/*"
+    ]
+  },
+  "devDependencies": {
+    "chihuahua-reporters": "^2.0.0"
+  }
+}

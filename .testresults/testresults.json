@@ -1,0 +1,669 @@
+{
+  "dateTime": "2016-03-17T05:19:05.521Z",
+  "testCount": 13,
+  "summaryFor": "SUITE",
+  "children": [
+    {
+      "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+      "dateTime": "2016-03-17T05:19:05.522Z",
+      "testCount": 6,
+      "summaryFor": "MODULE",
+      "children": [
+        {
+          "testInfo": {
+            "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+            "test": "should yield a cloned Array"
+          },
+          "dateTime": "2016-03-17T05:19:05.524Z",
+          "summaryFor": "TEST",
+          "children": [
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+                "test": "should yield a cloned Array"
+              },
+              "assertionFunction": "ok",
+              "args": [
+                true,
+                "expect result is an instance of Array"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+                "test": "should yield a cloned Array"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                3,
+                3,
+                "expect Array items to be copied"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+                "test": "should yield a cloned Array"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                2,
+                2,
+                "expect Array items to be equal"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+                "test": "should yield a cloned Array"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                "hello world",
+                "hello world",
+                "expect extra properties on Array to be copied"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            }
+          ],
+          "elapsedMS": 2,
+          "passed": true
+        },
+        {
+          "testInfo": {
+            "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+            "test": "should yield a cloned String"
+          },
+          "dateTime": "2016-03-17T05:19:05.527Z",
+          "summaryFor": "TEST",
+          "children": [
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+                "test": "should yield a cloned String"
+              },
+              "assertionFunction": "ok",
+              "args": [
+                true,
+                "expect result is an instance of String"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+                "test": "should yield a cloned String"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                "hello whirrelled",
+                "hello whirrelled",
+                "expect string to be copied"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            }
+          ],
+          "elapsedMS": 1,
+          "passed": true
+        },
+        {
+          "testInfo": {
+            "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+            "test": "should yield a clone for an instantiated String"
+          },
+          "dateTime": "2016-03-17T05:19:05.529Z",
+          "summaryFor": "TEST",
+          "children": [
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+                "test": "should yield a clone for an instantiated String"
+              },
+              "assertionFunction": "ok",
+              "args": [
+                true,
+                "expect result is an instance of String"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+                "test": "should yield a clone for an instantiated String"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                "hello whirrelled",
+                "hello whirrelled",
+                "expect string to be copied"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            }
+          ],
+          "elapsedMS": 1,
+          "passed": true
+        },
+        {
+          "testInfo": {
+            "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+            "test": "should yield a cloned String with extra properties"
+          },
+          "dateTime": "2016-03-17T05:19:05.530Z",
+          "summaryFor": "TEST",
+          "children": [
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+                "test": "should yield a cloned String with extra properties"
+              },
+              "assertionFunction": "ok",
+              "args": [
+                true,
+                "expect result is an instance of String"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+                "test": "should yield a cloned String with extra properties"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                "bar",
+                "bar",
+                "expect extra property to be copied"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            }
+          ],
+          "elapsedMS": 1,
+          "passed": true
+        },
+        {
+          "testInfo": {
+            "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+            "test": "should yield many extra properties per Object.assign"
+          },
+          "dateTime": "2016-03-17T05:19:05.532Z",
+          "summaryFor": "TEST",
+          "children": [
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+                "test": "should yield many extra properties per Object.assign"
+              },
+              "assertionFunction": "ok",
+              "args": [
+                true,
+                "expect result is an instance of Boolean"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+                "test": "should yield many extra properties per Object.assign"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                true,
+                true,
+                "expect boolean to be copied"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+                "test": "should yield many extra properties per Object.assign"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                "hello",
+                "hello",
+                "expect extra property to be copied"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+                "test": "should yield many extra properties per Object.assign"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                "world",
+                "world",
+                "expect extra property to be copied from rightmost argument"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            }
+          ],
+          "elapsedMS": 1,
+          "passed": true
+        },
+        {
+          "testInfo": {
+            "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+            "test": "should compose an object with pairs"
+          },
+          "dateTime": "2016-03-17T05:19:05.534Z",
+          "summaryFor": "TEST",
+          "children": [
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
+                "test": "should compose an object with pairs"
+              },
+              "assertionFunction": "deepEqual",
+              "args": [
+                {
+                  "a": 1,
+                  "b": 2,
+                  "c": 3
+                },
+                {
+                  "a": 1,
+                  "b": 2,
+                  "c": 3
+                },
+                "expect object to match pairs"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            }
+          ],
+          "elapsedMS": 1,
+          "passed": true
+        }
+      ],
+      "elapsedMS": 13,
+      "passed": true
+    },
+    {
+      "module": "/Users/grimescs/hack/idioms/spec/objects.test.js",
+      "dateTime": "2016-03-17T05:19:05.536Z",
+      "testCount": 1,
+      "summaryFor": "MODULE",
+      "children": [
+        {
+          "testInfo": {
+            "module": "/Users/grimescs/hack/idioms/spec/objects.test.js",
+            "test": "should return pairs for all properties in object"
+          },
+          "dateTime": "2016-03-17T05:19:05.536Z",
+          "summaryFor": "TEST",
+          "children": [
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/objects.test.js",
+                "test": "should return pairs for all properties in object"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                "a",
+                "a",
+                "expect first key"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            }
+          ],
+          "elapsedMS": 2,
+          "passed": true
+        }
+      ],
+      "elapsedMS": 2,
+      "passed": true
+    },
+    {
+      "module": "/Users/grimescs/hack/idioms/spec/permute.test.js",
+      "dateTime": "2016-03-17T05:19:05.538Z",
+      "testCount": 3,
+      "summaryFor": "MODULE",
+      "children": [
+        {
+          "testInfo": {
+            "module": "/Users/grimescs/hack/idioms/spec/permute.test.js",
+            "test": "permute comprehension should return all combinations of simple arrays"
+          },
+          "dateTime": "2016-03-17T05:19:05.539Z",
+          "summaryFor": "TEST",
+          "children": [
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/permute.test.js",
+                "test": "permute comprehension should return all combinations of simple arrays"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                4,
+                4,
+                "expect correct number of permutations"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            }
+          ],
+          "elapsedMS": 1,
+          "passed": true
+        },
+        {
+          "testInfo": {
+            "module": "/Users/grimescs/hack/idioms/spec/permute.test.js",
+            "test": "permute comprehension should return filtered combinations"
+          },
+          "dateTime": "2016-03-17T05:19:05.540Z",
+          "summaryFor": "TEST",
+          "children": [
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/permute.test.js",
+                "test": "permute comprehension should return filtered combinations"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                5,
+                5,
+                "expect correct number of permutations"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/permute.test.js",
+                "test": "permute comprehension should return filtered combinations"
+              },
+              "assertionFunction": "deepEqual",
+              "args": [
+                {
+                  "c": 12,
+                  "d": 13
+                },
+                {
+                  "c": 12,
+                  "d": 13
+                },
+                "expect correct number of permutations"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            }
+          ],
+          "elapsedMS": 2,
+          "passed": true
+        },
+        {
+          "testInfo": {
+            "module": "/Users/grimescs/hack/idioms/spec/permute.test.js",
+            "test": "select should return an iterable"
+          },
+          "dateTime": "2016-03-17T05:19:05.542Z",
+          "summaryFor": "TEST",
+          "children": [
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/permute.test.js",
+                "test": "select should return an iterable"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                3,
+                3
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/permute.test.js",
+                "test": "select should return an iterable"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                2,
+                2
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            }
+          ],
+          "elapsedMS": 1,
+          "passed": true
+        }
+      ],
+      "elapsedMS": 5,
+      "passed": true
+    },
+    {
+      "module": "/Users/grimescs/hack/idioms/spec/tailcall.test.js",
+      "dateTime": "2016-03-17T05:19:05.543Z",
+      "testCount": 1,
+      "summaryFor": "MODULE",
+      "children": [
+        {
+          "testInfo": {
+            "module": "/Users/grimescs/hack/idioms/spec/tailcall.test.js",
+            "test": "tailcall routine should yield a count"
+          },
+          "dateTime": "2016-03-17T05:19:05.544Z",
+          "summaryFor": "TEST",
+          "children": [
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/tailcall.test.js",
+                "test": "tailcall routine should yield a count"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                1000,
+                1000,
+                "expect 1000 as the final result"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            }
+          ],
+          "elapsedMS": 6,
+          "passed": true
+        }
+      ],
+      "elapsedMS": 7,
+      "passed": true
+    },
+    {
+      "module": "/Users/grimescs/hack/idioms/spec/tuple.test.js",
+      "dateTime": "2016-03-17T05:19:05.550Z",
+      "testCount": 2,
+      "summaryFor": "MODULE",
+      "children": [
+        {
+          "testInfo": {
+            "module": "/Users/grimescs/hack/idioms/spec/tuple.test.js",
+            "test": "tuple should create an indexed object"
+          },
+          "dateTime": "2016-03-17T05:19:05.551Z",
+          "summaryFor": "TEST",
+          "children": [
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/tuple.test.js",
+                "test": "tuple should create an indexed object"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                "a",
+                "a",
+                "expect first member present"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/tuple.test.js",
+                "test": "tuple should create an indexed object"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                "z",
+                "z",
+                "expect second member present"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/tuple.test.js",
+                "test": "tuple should create an indexed object"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                3,
+                3,
+                "expect third member present"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/tuple.test.js",
+                "test": "tuple should create an indexed object"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                null,
+                null,
+                "expect fourth member undefined"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/tuple.test.js",
+                "test": "tuple should create an indexed object"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                3,
+                3,
+                "expect length to be correct"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/tuple.test.js",
+                "test": "tuple should create an indexed object"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                "a,z,3",
+                "a,z,3",
+                "expect toString to return a value"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            }
+          ],
+          "elapsedMS": 1,
+          "passed": true
+        },
+        {
+          "testInfo": {
+            "module": "/Users/grimescs/hack/idioms/spec/tuple.test.js",
+            "test": "tuple should be iterable"
+          },
+          "dateTime": "2016-03-17T05:19:05.553Z",
+          "summaryFor": "TEST",
+          "children": [
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/tuple.test.js",
+                "test": "tuple should be iterable"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                "x",
+                "x",
+                "expect iterated value"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/tuple.test.js",
+                "test": "tuple should be iterable"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                "[object Object]",
+                "[object Object]",
+                "expect iterated value"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/tuple.test.js",
+                "test": "tuple should be iterable"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                "4",
+                "4",
+                "expect iterated value"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/tuple.test.js",
+                "test": "tuple should be iterable"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                3,
+                3,
+                "expect count to equal length"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            }
+          ],
+          "elapsedMS": 1,
+          "passed": true
+        }
+      ],
+      "elapsedMS": 4,
+      "passed": true
+    }
+  ],
+  "elapsedMS": 33
+}
