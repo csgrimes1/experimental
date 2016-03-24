@@ -1,11 +1,11 @@
 {
-  "dateTime": "2016-03-17T05:19:05.521Z",
-  "testCount": 13,
+  "dateTime": "2016-03-24T21:39:22.930Z",
+  "testCount": 16,
   "summaryFor": "SUITE",
   "children": [
     {
       "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
-      "dateTime": "2016-03-17T05:19:05.522Z",
+      "dateTime": "2016-03-24T21:39:22.931Z",
       "testCount": 6,
       "summaryFor": "MODULE",
       "children": [
@@ -14,7 +14,7 @@
             "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
             "test": "should yield a cloned Array"
           },
-          "dateTime": "2016-03-17T05:19:05.524Z",
+          "dateTime": "2016-03-24T21:39:22.933Z",
           "summaryFor": "TEST",
           "children": [
             {
@@ -73,7 +73,7 @@
               "summaryFor": "ASSERTION"
             }
           ],
-          "elapsedMS": 2,
+          "elapsedMS": 3,
           "passed": true
         },
         {
@@ -81,7 +81,7 @@
             "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
             "test": "should yield a cloned String"
           },
-          "dateTime": "2016-03-17T05:19:05.527Z",
+          "dateTime": "2016-03-24T21:39:22.936Z",
           "summaryFor": "TEST",
           "children": [
             {
@@ -120,7 +120,7 @@
             "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
             "test": "should yield a clone for an instantiated String"
           },
-          "dateTime": "2016-03-17T05:19:05.529Z",
+          "dateTime": "2016-03-24T21:39:22.938Z",
           "summaryFor": "TEST",
           "children": [
             {
@@ -159,7 +159,7 @@
             "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
             "test": "should yield a cloned String with extra properties"
           },
-          "dateTime": "2016-03-17T05:19:05.530Z",
+          "dateTime": "2016-03-24T21:39:22.940Z",
           "summaryFor": "TEST",
           "children": [
             {
@@ -190,7 +190,7 @@
               "summaryFor": "ASSERTION"
             }
           ],
-          "elapsedMS": 1,
+          "elapsedMS": 0,
           "passed": true
         },
         {
@@ -198,7 +198,7 @@
             "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
             "test": "should yield many extra properties per Object.assign"
           },
-          "dateTime": "2016-03-17T05:19:05.532Z",
+          "dateTime": "2016-03-24T21:39:22.941Z",
           "summaryFor": "TEST",
           "children": [
             {
@@ -265,7 +265,7 @@
             "module": "/Users/grimescs/hack/idioms/spec/compose.test.js",
             "test": "should compose an object with pairs"
           },
-          "dateTime": "2016-03-17T05:19:05.534Z",
+          "dateTime": "2016-03-24T21:39:22.943Z",
           "summaryFor": "TEST",
           "children": [
             {
@@ -299,8 +299,313 @@
       "passed": true
     },
     {
+      "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+      "dateTime": "2016-03-24T21:39:22.944Z",
+      "testCount": 2,
+      "summaryFor": "MODULE",
+      "children": [
+        {
+          "testInfo": {
+            "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+            "test": "create simple dependency"
+          },
+          "dateTime": "2016-03-24T21:39:22.947Z",
+          "summaryFor": "TEST",
+          "children": [
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "create simple dependency"
+              },
+              "assertionFunction": "ok",
+              "args": [
+                true,
+                "expect a to depend on b"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "create simple dependency"
+              },
+              "assertionFunction": "ok",
+              "args": [
+                true,
+                "expect a to depend on c"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "create simple dependency"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                false,
+                false,
+                "expect b to not depend on a"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            }
+          ],
+          "elapsedMS": 2,
+          "passed": true
+        },
+        {
+          "testInfo": {
+            "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+            "test": "dependency processing order"
+          },
+          "dateTime": "2016-03-24T21:39:22.951Z",
+          "summaryFor": "TEST",
+          "children": [
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "dependency processing order"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                false,
+                false
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "dependency processing order"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                false,
+                false
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "dependency processing order"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                false,
+                false
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "dependency processing order"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                false,
+                false
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "dependency processing order"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                false,
+                false
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "dependency processing order"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                false,
+                false
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "dependency processing order"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                false,
+                false
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "dependency processing order"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                false,
+                false
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "dependency processing order"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                false,
+                false
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "dependency processing order"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                false,
+                false
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "dependency processing order"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                false,
+                false
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "dependency processing order"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                false,
+                false
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "dependency processing order"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                false,
+                false
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "dependency processing order"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                false,
+                false
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            },
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/dependency.test.js",
+                "test": "dependency processing order"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                false,
+                false
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            }
+          ],
+          "elapsedMS": 5,
+          "passed": true
+        }
+      ],
+      "elapsedMS": 12,
+      "passed": true
+    },
+    {
+      "module": "/Users/grimescs/hack/idioms/spec/grammar.test.js",
+      "dateTime": "2016-03-24T21:39:22.956Z",
+      "testCount": 1,
+      "summaryFor": "MODULE",
+      "children": [
+        {
+          "testInfo": {
+            "module": "/Users/grimescs/hack/idioms/spec/grammar.test.js",
+            "test": "should compile token set"
+          },
+          "dateTime": "2016-03-24T21:39:22.957Z",
+          "summaryFor": "TEST",
+          "children": [
+            {
+              "testInfo": {
+                "module": "/Users/grimescs/hack/idioms/spec/grammar.test.js",
+                "test": "should compile token set"
+              },
+              "assertionFunction": "equal",
+              "args": [
+                "\\-\\d.",
+                "\\-\\d.",
+                "expect compiled regex source"
+              ],
+              "passed": true,
+              "summaryFor": "ASSERTION"
+            }
+          ],
+          "elapsedMS": 2,
+          "passed": true
+        }
+      ],
+      "elapsedMS": 3,
+      "passed": true
+    },
+    {
       "module": "/Users/grimescs/hack/idioms/spec/objects.test.js",
-      "dateTime": "2016-03-17T05:19:05.536Z",
+      "dateTime": "2016-03-24T21:39:22.960Z",
       "testCount": 1,
       "summaryFor": "MODULE",
       "children": [
@@ -309,7 +614,7 @@
             "module": "/Users/grimescs/hack/idioms/spec/objects.test.js",
             "test": "should return pairs for all properties in object"
           },
-          "dateTime": "2016-03-17T05:19:05.536Z",
+          "dateTime": "2016-03-24T21:39:22.960Z",
           "summaryFor": "TEST",
           "children": [
             {
@@ -327,16 +632,16 @@
               "summaryFor": "ASSERTION"
             }
           ],
-          "elapsedMS": 2,
+          "elapsedMS": 1,
           "passed": true
         }
       ],
-      "elapsedMS": 2,
+      "elapsedMS": 1,
       "passed": true
     },
     {
       "module": "/Users/grimescs/hack/idioms/spec/permute.test.js",
-      "dateTime": "2016-03-17T05:19:05.538Z",
+      "dateTime": "2016-03-24T21:39:22.961Z",
       "testCount": 3,
       "summaryFor": "MODULE",
       "children": [
@@ -345,7 +650,7 @@
             "module": "/Users/grimescs/hack/idioms/spec/permute.test.js",
             "test": "permute comprehension should return all combinations of simple arrays"
           },
-          "dateTime": "2016-03-17T05:19:05.539Z",
+          "dateTime": "2016-03-24T21:39:22.962Z",
           "summaryFor": "TEST",
           "children": [
             {
@@ -371,7 +676,7 @@
             "module": "/Users/grimescs/hack/idioms/spec/permute.test.js",
             "test": "permute comprehension should return filtered combinations"
           },
-          "dateTime": "2016-03-17T05:19:05.540Z",
+          "dateTime": "2016-03-24T21:39:22.963Z",
           "summaryFor": "TEST",
           "children": [
             {
@@ -417,7 +722,7 @@
             "module": "/Users/grimescs/hack/idioms/spec/permute.test.js",
             "test": "select should return an iterable"
           },
-          "dateTime": "2016-03-17T05:19:05.542Z",
+          "dateTime": "2016-03-24T21:39:22.965Z",
           "summaryFor": "TEST",
           "children": [
             {
@@ -456,7 +761,7 @@
     },
     {
       "module": "/Users/grimescs/hack/idioms/spec/tailcall.test.js",
-      "dateTime": "2016-03-17T05:19:05.543Z",
+      "dateTime": "2016-03-24T21:39:22.966Z",
       "testCount": 1,
       "summaryFor": "MODULE",
       "children": [
@@ -465,7 +770,7 @@
             "module": "/Users/grimescs/hack/idioms/spec/tailcall.test.js",
             "test": "tailcall routine should yield a count"
           },
-          "dateTime": "2016-03-17T05:19:05.544Z",
+          "dateTime": "2016-03-24T21:39:22.967Z",
           "summaryFor": "TEST",
           "children": [
             {
@@ -492,7 +797,7 @@
     },
     {
       "module": "/Users/grimescs/hack/idioms/spec/tuple.test.js",
-      "dateTime": "2016-03-17T05:19:05.550Z",
+      "dateTime": "2016-03-24T21:39:22.973Z",
       "testCount": 2,
       "summaryFor": "MODULE",
       "children": [
@@ -501,7 +806,7 @@
             "module": "/Users/grimescs/hack/idioms/spec/tuple.test.js",
             "test": "tuple should create an indexed object"
           },
-          "dateTime": "2016-03-17T05:19:05.551Z",
+          "dateTime": "2016-03-24T21:39:22.973Z",
           "summaryFor": "TEST",
           "children": [
             {
@@ -589,7 +894,7 @@
               "summaryFor": "ASSERTION"
             }
           ],
-          "elapsedMS": 1,
+          "elapsedMS": 2,
           "passed": true
         },
         {
@@ -597,7 +902,7 @@
             "module": "/Users/grimescs/hack/idioms/spec/tuple.test.js",
             "test": "tuple should be iterable"
           },
-          "dateTime": "2016-03-17T05:19:05.553Z",
+          "dateTime": "2016-03-24T21:39:22.975Z",
           "summaryFor": "TEST",
           "children": [
             {
@@ -661,9 +966,9 @@
           "passed": true
         }
       ],
-      "elapsedMS": 4,
+      "elapsedMS": 3,
       "passed": true
     }
   ],
-  "elapsedMS": 33
+  "elapsedMS": 46
 }

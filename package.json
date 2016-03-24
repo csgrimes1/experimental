@@ -6,7 +6,7 @@
   "dependencies": {},
   "scripts": {
     "testxx": "ls -1 spec/*.js | node $(npm bin)/runsuite",
-    "test": "$(npm bin)/chi-run spec *.test.js .testresults default coverage xunit"
+    "test": "$(npm bin)/chi-run spec *.test.js .testresults coverage default xunit"
   },
   "author": "Chris Grimes",
   "license": "ISC",

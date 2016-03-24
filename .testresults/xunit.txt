@@ -8,6 +8,13 @@
         <testcase name="should yield many extra properties per Object.assign"/>
         <testcase name="should compose an object with pairs"/>
     </testsuite>
+    <testsuite name="/Users/grimescs/hack/idioms/spec/dependency.test.js">
+        <testcase name="create simple dependency"/>
+        <testcase name="dependency processing order"/>
+    </testsuite>
+    <testsuite name="/Users/grimescs/hack/idioms/spec/grammar.test.js">
+        <testcase name="should compile token set"/>
+    </testsuite>
     <testsuite name="/Users/grimescs/hack/idioms/spec/objects.test.js">
         <testcase name="should return pairs for all properties in object"/>
     </testsuite>
