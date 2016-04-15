@@ -36,11 +36,10 @@ module.exports = {
     },
 
     buildObject: function (pairs) {
-        let result = {};
+        const args = [{}].concat(
+            pairs.map(p => ({[p[0]]: p[1]}))
+        );
 
-        for(let pair of pairs){
-            result[pair[0]] = pair[1];
-        }
-        return result;
+        return module.exports.assign.apply(null, args);
     }
 };

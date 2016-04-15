@@ -1,6 +1,7 @@
 'use strict';
 
-const nodeInScope = function (scope) {
+const tailcall = require('./tailcall'),
+    nodeInScope = function (scope) {
         let dict = scope.dict;
 
         return function (name) {
@@ -12,7 +13,7 @@ const nodeInScope = function (scope) {
             return (dict[name] = {
                 scope: scope,
                 name: name,
-                deps: {},
+                deps: new Set(),
                 dependsOn: function (depName) {
                     const otherNode = scope.node(depName);
                     let me = dict[name];
@@ -21,18 +22,18 @@ const nodeInScope = function (scope) {
                         throw new Error('CIRCULAR_DEPENDENCY');
                     }
 
-                    me.deps[depName] = otherNode;
+                    me.deps.add(depName);
                     return me;
                 },
                 hasDependencyOn: function (depName) {
                     let me = dict[name];
 
-                    if (me.deps.hasOwnProperty(depName)) {
+                    if (me.deps.has(depName)) {
                         return true;
                     }
 
-                    for (let k in me.deps) {
-                        const dep = me.deps[k];
+                    for (let k of me.deps) {
+                        const dep = dict[k];
 
                         if (dep.hasDependencyOn(depName)) {
                             return true;
@@ -44,22 +45,67 @@ const nodeInScope = function (scope) {
             });
         };
     },
+
+    hasDeps = function (scope, key, others) {
+        const keyNode = scope.node(key);
+
+        for (let other of others) {
+            if (keyNode.hasDependencyOn(other)) {
+                return true;
+            }
+        }
+        return false;
+    },
+
+    splitList = function (scope, keys) {
+        return tailcall((tail, listIterator, accum) => {
+            if (listIterator.length <= 0) {
+                return accum;
+            }
+            else {
+                const head = listIterator[0],
+                    unencumbered = !hasDeps(scope, head, keys),
+                    newPop = unencumbered ? [head] : [],
+                    newKeep = unencumbered ? [] : [head],
+                    newAccum = Object.assign({}, accum, {
+                        pop:  accum.pop.concat(newPop),
+                        keep: accum.keep.concat(newKeep)
+                    });
+
+                return tail(listIterator.slice(1), newAccum);
+            }
+        }, keys, {pop: [], keep: []});
+    },
+
     sortScope = function (scope) {
         return function () {
             const keys = Object.getOwnPropertyNames(scope.dict);
 
-            return keys.sort( function (a, b) {
-                const nodeA = scope.node(a),
-                    nodeB = scope.node(b);
-
-                if (nodeA.hasDependencyOn(b)) {
-                    return 1;
-                } else if (nodeB.hasDependencyOn(a)) {
-                    return -1;
+            return tailcall((tail, accum) => {
+                if (accum.keep.length <= 0) {
+                    return accum.pop;
                 }
 
-                return -1;
-            });
+                const splitRes = splitList(scope, accum.keep);
+
+                return tail({
+                    pop:  accum.pop.concat(splitRes.pop),
+                    keep: splitRes.keep
+                });
+            }, {pop: [], keep: keys});
+            //return keys.sort( function (a, b) {
+            //    const nodeA = scope.node(a),
+            //        nodeB = scope.node(b);
+            //
+            //    if (nodeA.hasDependencyOn(b)) {
+            //        return 1;
+            //    } else if (nodeB.hasDependencyOn(a)) {
+            //        console.log(`a: ${a}   b: ${b}`);
+            //        return -1;
+            //    }
+            //
+            //    return 0;
+            //});
         };
     };
 

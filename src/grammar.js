@@ -9,12 +9,9 @@ const objects = require('./objects'),
         return thing && typeof thing['compile'] === 'function' && typeof thing['exec'] === 'function';
     },
     getDeps = function (composition) {
-        if (isRegex(composition)){
-            return [];
-        }
         return composition.filter(el => !isRegex(el));
     },
-    resolve = function (tokenSet, composition) {
+    resolve = function (tokenSet, composition, flags) {
         if (isRegex(composition)) {
             return composition;
         }
@@ -22,7 +19,7 @@ const objects = require('./objects'),
         const source = composition.reduce((accum, val) => {
             return accum + (isRegex(val) ? val.source : tokenSet[val].source);
         }, "");
-        return new RegExp(source);
+        return new RegExp(source, flags);
     },
     buildPairs =  function (tokenDefs, scope) {
         //Process tail-recursively
@@ -37,7 +34,7 @@ const objects = require('./objects'),
 
             return tail(tokenNames.slice(1), nextSet);
         }, scope.createProcessingOrder(), {});
-    }
+    };
 
 module.exports = {
     //' $ws $lf $y8 '
@@ -57,8 +54,11 @@ module.exports = {
         const ns = buildPairs(tokenDefs, scope);
         return {
             namespace: ns,
+            withFlags: function (flags) {
+                return composeModule.assign({}, this, {flags: flags});
+            },
             compose: function () {
-                return resolve(ns, Array.from(arguments));
+                return resolve(ns, Array.from(arguments), this.flags);
             }
         };
     },

@@ -11,9 +11,12 @@
     <testsuite name="/Users/grimescs/hack/idioms/spec/dependency.test.js">
         <testcase name="create simple dependency"/>
         <testcase name="dependency processing order"/>
+        <testcase name="circular dependencies caught"/>
     </testsuite>
     <testsuite name="/Users/grimescs/hack/idioms/spec/grammar.test.js">
         <testcase name="should compile token set"/>
+        <testcase name="should build an expression from token set"/>
+        <testcase name="should build a case insensitive regexp"/>
     </testsuite>
     <testsuite name="/Users/grimescs/hack/idioms/spec/objects.test.js">
         <testcase name="should return pairs for all properties in object"/>

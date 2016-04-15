@@ -6,12 +6,14 @@ module.exports = {
     beforeTest: t => {
         const scope = dep.createScope();
 
+        scope.node('g').dependsOn('b');
         scope.node('a').dependsOn('b');
         scope.node('b').dependsOn('c');
         scope.node('f').dependsOn('e');
         scope.node('d').dependsOn('a');
         scope.node('d').dependsOn('e');
-
+        scope.node('h').dependsOn('g');
+        scope.node('a').dependsOn('h');
         return t.createContext('dependency', 'dependency', {scope: scope}, 50);
     },
 
@@ -38,6 +40,17 @@ module.exports = {
                 for (let unproc of tail) {
                     context.equal(kNode.hasDependencyOn(unproc), false);
                 }
+            }
+        },
+
+        'circular dependencies caught': context => {
+            const scope = context.userData.scope;
+
+            try {
+                scope.node('c').dependsOn('b');
+                context.fail('exception should have been thrown');
+            } catch (x) {
+
             }
         }
     }
