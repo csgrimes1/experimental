@@ -1,6 +1,6 @@
 'use strict';
 
-const compose = require('../src/compose');
+const factory = require('../src/objectfactory');
 
 module.exports = {
 
@@ -12,7 +12,7 @@ module.exports = {
         'should yield a cloned Array': context => {
             const text = 'hello world',
                 testArray = Object.assign([1, 2, 3], {prop: text}),
-                result = compose.assign(testArray);
+                result = factory.merge(testArray);
 
             context.ok(result instanceof Array, `expect result is an instance of Array`);
             context.equal(result.length, testArray.length, 'expect Array items to be copied');
@@ -21,21 +21,21 @@ module.exports = {
         },
         'should yield a cloned String': context => {
             const testVal = 'hello whirrelled',
-                result = compose.assign(testVal);
+                result = factory.merge(testVal);
 
             context.ok(result instanceof String, `expect result is an instance of String`);
             context.equal(result, testVal, 'expect string to be copied');
         },
         'should yield a clone for an instantiated String': context => {
             const testVal = 'hello whirrelled',
-                result = compose.assign(new String(testVal));
+                result = factory.merge(new String(testVal));
 
             context.ok(result instanceof String, `expect result is an instance of String`);
             context.equal(result, testVal, 'expect string to be copied');
         },
         'should yield a cloned String with extra properties': context => {
             const testVal = 'bar',
-                result = compose.assign(testVal, {foo: testVal});
+                result = factory.merge(testVal, {foo: testVal});
 
             context.ok(result instanceof String, `expect result is an instance of String`);
             context.equal(result.foo, testVal, 'expect extra property to be copied');
@@ -44,7 +44,7 @@ module.exports = {
             const testVal = true,
                 x = 'hello',
                 y = 'world',
-                result = compose.assign(new Boolean(testVal), {x: x, y: false}, {y: y});
+                result = factory.merge(new Boolean(testVal), {x: x, y: false}, {y: y});
 
             context.ok(result instanceof Boolean, `expect result is an instance of Boolean`);
             context.equal(result, testVal, 'expect boolean to be copied');
@@ -52,7 +52,7 @@ module.exports = {
             context.equal(result.y, y, 'expect extra property to be copied from rightmost argument');
         },
         'should compose an object with pairs': context => {
-            const obj = compose.buildObject([['a', 1], ['b', 2], ['c', 3]]);
+            const obj = factory.buildObject([['a', 1], ['b', 2], ['c', 3]]);
 
             context.deepEqual(obj, {a: 1, b: 2, c: 3}, 'expect object to match pairs');
         }

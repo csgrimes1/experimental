@@ -1,6 +1,7 @@
 'use strict';
 
-const tailcall = require('./tailcall'),
+const objectfactory = require('./objectfactory'),
+    tailcall = require('./tailcall'),
     nodeInScope = function (scope) {
         let dict = scope.dict;
 
@@ -67,7 +68,7 @@ const tailcall = require('./tailcall'),
                     unencumbered = !hasDeps(scope, head, keys),
                     newPop = unencumbered ? [head] : [],
                     newKeep = unencumbered ? [] : [head],
-                    newAccum = Object.assign({}, accum, {
+                    newAccum = objectfactory.merge( accum, {
                         pop:  accum.pop.concat(newPop),
                         keep: accum.keep.concat(newKeep)
                     });
@@ -81,6 +82,11 @@ const tailcall = require('./tailcall'),
         return function () {
             const keys = Object.getOwnPropertyNames(scope.dict);
 
+            //Optimized sorting algorithms do not work because the hasDependency comparison
+            //creates a nondeterministic sort. If a...d relate with d being most dependent,
+            //and e...g relate in the same way, both the following sorts are legal:
+            // a b c d e f g
+            // a e b c f g d
             return tailcall((tail, accum) => {
                 if (accum.keep.length <= 0) {
                     return accum.pop;
@@ -93,19 +99,6 @@ const tailcall = require('./tailcall'),
                     keep: splitRes.keep
                 });
             }, {pop: [], keep: keys});
-            //return keys.sort( function (a, b) {
-            //    const nodeA = scope.node(a),
-            //        nodeB = scope.node(b);
-            //
-            //    if (nodeA.hasDependencyOn(b)) {
-            //        return 1;
-            //    } else if (nodeB.hasDependencyOn(a)) {
-            //        console.log(`a: ${a}   b: ${b}`);
-            //        return -1;
-            //    }
-            //
-            //    return 0;
-            //});
         };
     };
 

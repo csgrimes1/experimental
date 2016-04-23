@@ -1,6 +1,6 @@
 'use strict';
 
-const grammar = require('../src/grammar'),
+const grammar = require('../src/regexfactory'),
     compose = grammar.compose;
 
 module.exports = {

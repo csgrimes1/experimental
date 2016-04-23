@@ -29,10 +29,10 @@ module.exports = {
                 ar = Array.from(gen);
 
             context.equal(ar.length, 5, `expect correct number of permutations`);
-            context.deepEqual(ar[3], {c:12, d:13}, `expect correct number of permutations`);
+            context.deepEqual(ar[3], {c:12, d:13}, `expect correct value at index`);
         },
         'select should return an iterable': context => {
-            const col = select(1, 2, 3).where(() => false),
+            const col = select(1, 2, 3).where(() => true),
                 ar = Array.from(col);
 
             for(let n of col){}

@@ -1,7 +1,5 @@
 'use strict';
 
-const compose = require('./compose');
-
 class Tuple {
     constructor (members) {
         Object.assign(this, Array.from(members));

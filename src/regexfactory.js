@@ -4,7 +4,7 @@
 const objects = require('./objects'),
     deps = require('./dependency'),
     tailcall = require('./tailcall'),
-    composeModule = require('./compose'),
+    factory = require('./objectfactory'),
     isRegex = function (thing) {
         return thing && typeof thing['compile'] === 'function' && typeof thing['exec'] === 'function';
     },
@@ -28,7 +28,7 @@ const objects = require('./objects'),
                 return tokenSet;
             }
             const name = tokenNames[0],
-                nextSet = composeModule.assign(tokenSet, {
+                nextSet = factory.merge(tokenSet, {
                     [name]: resolve(tokenSet, tokenDefs[name])
                 });
 
@@ -55,7 +55,7 @@ module.exports = {
         return {
             namespace: ns,
             withFlags: function (flags) {
-                return composeModule.assign({}, this, {flags: flags});
+                return factory.merge({}, this, {flags: flags});
             },
             compose: function () {
                 return resolve(ns, Array.from(arguments), this.flags);

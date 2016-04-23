@@ -5,8 +5,8 @@
   "main": "index.js",
   "dependencies": {},
   "scripts": {
-    "testxx": "ls -1 spec/*.js | node $(npm bin)/runsuite",
-    "test": "$(npm bin)/chi-run spec *.test.js .testresults coverage default xunit"
+    "test": "$(npm bin)/chi-run spec *.test.js .testresults coverage default xunit",
+    "newtest": "toolbin/newtest.sh"
   },
   "author": "Chris Grimes",
   "license": "ISC",

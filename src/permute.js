@@ -1,7 +1,7 @@
 'use strict';
 
 const tuple = require('./tuple'),
-    compose = require('./compose'),
+    factory = require('./objectfactory'),
     objects = require('./objects'),
     select = function () {
         const  ar = Array.from(arguments);
@@ -31,7 +31,7 @@ module.exports = function *comprehensor (collections) {
 
             for(let v of col){
                 const tuples = tailArgs.concat(tuple(k, v)),
-                    yieldObj = compose.buildObject(tuples);
+                    yieldObj = factory.buildObject(tuples);
 
                 if (filter(yieldObj)) {
                     if (entries.length === 1) {
