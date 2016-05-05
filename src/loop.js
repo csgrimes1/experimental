@@ -12,13 +12,13 @@ module.exports = {
             return module.exports.top(ar[0], ar[1], result => result, ar[2]);
         }
 
-        return tailcall((tail, accum, loopIndex) => {
+        return tailcall(initializer, 0, (accum, loopIndex, tail) => {
             if (!predicate(accum, loopIndex)) {
                 return finalizeResult(accum);
             }
 
             return tail(callback(accum, loopIndex), loopIndex + 1);
-        }, initializer, 0);
+        });
     },
 
     //Predicated at bottom, after callback. Callback always gets called at least one time.
@@ -30,13 +30,13 @@ module.exports = {
             return module.exports.bottom(ar[0], result => result, ar[1], ar[2]);
         }
 
-        return tailcall((tail, accum, loopIndex) => {
+        return tailcall(initializer, 0, (accum, loopIndex, tail) => {
             const nextAccum = callback(accum, loopIndex);
             if (!predicate(nextAccum, loopIndex)) {
                 return finalizeResult(nextAccum);
             }
 
             return tail(nextAccum, loopIndex + 1);
-        }, initializer, 0);
+        });
     }
 };

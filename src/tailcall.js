@@ -4,11 +4,12 @@ const toArray = function (collection) {
     return Array.from(collection);
 };
 
-module.exports = function (recurseFunc) {
-    const args = toArray(arguments).slice(1),
+module.exports = function () {
+    const a1 = toArray(arguments),
+        args = a1.slice(0, a1.length - 1),
+        recurseFunc = a1[a1.length -1],
         tail = function () {
-            const self = this,
-                tailArgs = [tail].concat(toArray(arguments));
+            const tailArgs = toArray(arguments).concat([tail]);
 
             return () => {
                 return recurseFunc.apply(null, tailArgs);

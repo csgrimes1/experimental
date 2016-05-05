@@ -59,7 +59,7 @@ const objectfactory = require('./objectfactory'),
     },
 
     splitList = function (scope, keys) {
-        return tailcall((tail, listIterator, accum) => {
+        return tailcall(keys, {pop: [], keep: []}, (listIterator, accum, tail) => {
             if (listIterator.length <= 0) {
                 return accum;
             }
@@ -75,7 +75,7 @@ const objectfactory = require('./objectfactory'),
 
                 return tail(listIterator.slice(1), newAccum);
             }
-        }, keys, {pop: [], keep: []});
+        });
     },
 
     sortScope = function (scope) {
@@ -87,7 +87,7 @@ const objectfactory = require('./objectfactory'),
             //and e...g relate in the same way, both the following sorts are legal:
             // a b c d e f g
             // a e b c f g d
-            return tailcall((tail, accum) => {
+            return tailcall({pop: [], keep: keys}, (accum, tail) => {
                 if (accum.keep.length <= 0) {
                     return accum.pop;
                 }
@@ -98,7 +98,7 @@ const objectfactory = require('./objectfactory'),
                     pop:  accum.pop.concat(splitRes.pop),
                     keep: splitRes.keep
                 });
-            }, {pop: [], keep: keys});
+            });
         };
     };
 

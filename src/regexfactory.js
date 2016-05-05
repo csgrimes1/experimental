@@ -23,7 +23,7 @@ const objects = require('./objects'),
     },
     buildPairs =  function (tokenDefs, scope) {
         //Process tail-recursively
-        return tailcall((tail, tokenNames, tokenSet) => {
+        return tailcall(scope.createProcessingOrder(), {}, (tokenNames, tokenSet, tail) => {
             if (tokenNames.length <= 0) {
                 return tokenSet;
             }
@@ -33,7 +33,7 @@ const objects = require('./objects'),
                 });
 
             return tail(tokenNames.slice(1), nextSet);
-        }, scope.createProcessingOrder(), {});
+        });
     };
 
 module.exports = {

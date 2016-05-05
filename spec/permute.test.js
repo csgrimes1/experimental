@@ -28,6 +28,7 @@ module.exports = {
                 }),
                 ar = Array.from(gen);
 
+            //Sequence:  11,12  11,13  11,14  12,13  12,14
             context.equal(ar.length, 5, `expect correct number of permutations`);
             context.deepEqual(ar[3], {c:12, d:13}, `expect correct value at index`);
         },
